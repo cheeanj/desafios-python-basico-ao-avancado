@@ -1,0 +1,22 @@
+
+carrinho = []
+
+carrinho.append(('produto 1', 30))
+carrinho.append(('produto 2', 20))
+carrinho.append(('produto 3', 50))
+
+print(carrinho)
+
+ex_total = 0
+for produto in carrinho:
+    ex_total += produto[1]
+print(ex_total)
+
+ex_total2 = []
+for produto in carrinho:
+    ex_total2.append(produto[1])
+print(sum(ex_total2))
+
+# some os preços usando list comprehension
+total = sum(v for p, v in carrinho)
+print(total)
