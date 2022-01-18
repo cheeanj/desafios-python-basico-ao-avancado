@@ -1,0 +1,54 @@
+""""""
+"""
+1 - Crie uma função1 que recebe uma função2 como
+parâmetro retorna o valor da função2 executada.
+"""
+
+
+# def f1():
+#     var = 'Valor'
+#     return var
+#
+#
+# def f2(arg):
+#     print(arg)
+#
+#
+# recebe = f1()
+# f2(recebe)
+
+
+def ola_mundo():
+    return 'Olá mundo!'
+
+
+def executar(funcao):
+    return funcao
+
+
+exibir = executar(ola_mundo())
+print(exibir)
+
+"""
+2- Crie uma função1 que recebe uma função2 como parâmetro e retorna o valor da
+função2 executada. Faça a função1 executar duas funções que recebam um número
+diferente de argumentos.
+"""
+
+
+def mestre(funcao, *args, **kwargs):
+    return funcao(*args, **kwargs)
+
+
+def fala_oi(nome):
+    return f'oi {nome}'
+
+
+def saudacao(nome, saudacao):
+    return f'{saudacao} {nome}'
+
+
+exibir = mestre(fala_oi, 'João')
+exibir2 = mestre(saudacao, 'Lucas', saudacao='Bom dia')
+print(exibir)
+print(exibir2)
