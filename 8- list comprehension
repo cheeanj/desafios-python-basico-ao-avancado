@@ -1,0 +1,20 @@
+"""
+separe os valores da string usando list comprehension, retorne os grupos separando por ponto.
+"""
+string = '01234567890123456789012345678901234567890123456789'
+n = 10
+lista = [string[i: i + n] for i in range(0, len(string), n)]
+print(lista)
+# fatiando a str de 'i'ndice ("0" até "9" estipulado pela var "n"),
+# com range valor do indice 0 até o tamanho da str, de de 10 em 10 (valor da var n)
+retorno = '.'.join(lista)
+print(retorno)
+
+# contadores = [i for i in range(0, len(string), n)]
+# tuplas = [(i, i + n) for i in range(0, len(string), n)]
+# lista = [string[i: i + n] for i in range(0, len(string), n)]
+# retorno = '.'.join(lista)
+# print(contadores)
+# print(tuplas)
+# print(lista)
+# print(retorno)
