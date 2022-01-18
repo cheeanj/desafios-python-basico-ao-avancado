@@ -1,0 +1,69 @@
+""""""
+"""
+1- Crie uma função que exibe uma saudação
+com os parâmetros saudação e nome
+"""
+
+
+def saudacao(saudar='olá', nome='Jean'):
+    print(saudar, nome)
+
+
+saudacao()
+saudacao('Oi', 'Silva')
+
+"""
+2- Crie uma função que recebe 3 números
+como parâmetros e exiba a soma entre eles.
+"""
+
+
+def f_soma(n1=5, n2=3, n3=1):
+    print(n1 + n2 + n3)
+
+
+f_soma()
+"""
+3- Crie uma função que receba 2 números.
+O primeiro é um valor e o segundo um percentual (ex. 10%).
+Retorne(return) o valor do primeiro número somado
+do aumento do percentual do mesmo.
+"""
+
+
+def numero(n1=100, n2=10):
+    return n1 + (n1 * n2 / 100)
+
+
+print(numero())
+print(numero(50, 50))
+
+"""
+4- Fizz Buzz - Se o parâmetro da função for divisível por 3, retorne fizz,
+Se o parâmetro da função for divisível por 5, retorne buzz. Se o parâmetro
+da função for divisível por 5 e 3, retorne FizzBuzz, caso contrário, retorne
+o número enviado.
+"""
+
+
+def divizor(valor):
+    if valor % 5 == 0 and valor % 3 == 0:
+        return 'fizzBuzz'
+    elif valor % 3 == 0:
+        return 'fizz'
+    elif valor % 5 == 0:
+        return 'buzz'
+    else:
+        return f'{valor} não pode ser dividido por 3 ou 5'
+
+
+# digitado = input('Digite um numero: ')
+# print(divizor(valor=int(digitado)))
+
+
+from random import randint
+
+
+for i in range(5):
+    aleatorio = randint(0, 100)
+    print(divizor(aleatorio))
