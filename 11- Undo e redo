@@ -1,0 +1,62 @@
+"""
+Faça uma lista de tarefas com as seguintes opções:
+    adicionar tarefa
+    listar tarefas
+    opção de desfazer ( a cada vez que chamarmos, desfaz a última ação)
+    opção de refazer ( a cada vez que chamarmos, refaz a última ação)
+
+    ['Tarefa1', 'Tarefa2']
+    ['Tarefa1'] <- Desfazer
+    ['Tarefa1', 'Tarefa2'] <- refazer
+
+    input <- Nova tarefa
+"""
+
+
+def show_op(todo_lista):
+    print()
+    print('Tarefas: ')
+    print(todo_lista)
+    print()
+
+
+def do_desfaz(todo_lista, redo_lista):
+    if not todo_lista:
+        print('Nada a desfazer')
+        return
+
+    last_todo = todo_lista.pop()
+    redo_lista.append(last_todo)
+
+
+def do_refaz(todo_lista, redo_lista):
+    if not redo_lista:
+        print('Nada a refazer')
+        return
+
+    last_redo = redo_lista.pop()
+    todo_lista.append(last_redo)
+
+
+def do_add(todo, todo_lista):
+    todo_lista.append(todo)
+
+
+if __name__ == '__main__':
+    todo_lista = []
+    redo_lista = []
+
+    while True:
+        tudos = input('Digite uma tarefa ou [d]esfaz, [r]efaz, [l]istar]: ')
+
+        if tudos == 'l':
+            show_op(todo_lista)
+            continue
+        elif tudos == 'd':
+            do_desfaz(todo_lista, redo_lista)
+            continue
+        elif tudos == 'r':
+            do_refaz(todo_lista, redo_lista)
+            continue
+
+        do_add(tudos, todo_lista)
